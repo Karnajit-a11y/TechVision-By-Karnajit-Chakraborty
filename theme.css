@@ -1,0 +1,125 @@
+
+:root:not([data-theme="dark"]) { color-scheme: light; }
+
+/* ---------- Dark tokens ---------- */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --primary-light: #0f1625;
+  --text-dark: #e2e8f0;
+  --text-light: #94a3b8;
+  --border-color: rgba(148, 163, 184, 0.16);
+  --surface: #161f2f;
+  --heading: #f1f5f9;
+  --glass: rgba(11, 18, 32, 0.78);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.5);
+  --shadow-premium: 0 24px 60px -20px rgba(0, 0, 0, 0.6);
+}
+
+:root[data-theme="dark"] body {
+  background-color: #0b1220;
+  color: var(--text-dark);
+}
+
+/* ---------- Navbar ---------- */
+:root[data-theme="dark"] .navbar { background: var(--glass); }
+:root[data-theme="dark"] .navbar.is-scrolled { background: rgba(11, 18, 32, 0.94); }
+:root[data-theme="dark"] .navbar-collapse { background: #0f1625; }
+
+:root[data-theme="dark"] .navbar-brand {
+  background: linear-gradient(135deg, #ffffff, var(--accent-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ---------- Section backgrounds ---------- */
+:root[data-theme="dark"] .services,
+:root[data-theme="dark"] .resources,
+:root[data-theme="dark"] .faq {
+  background-color: #0b1220;
+}
+
+/* ---------- Cards & surfaces ---------- */
+:root[data-theme="dark"] .service-card,
+:root[data-theme="dark"] .feature-card,
+:root[data-theme="dark"] .team-card,
+:root[data-theme="dark"] .resource-card,
+:root[data-theme="dark"] .testimonial-card,
+:root[data-theme="dark"] .contact-wrapper {
+  background: var(--surface);
+}
+
+:root[data-theme="dark"] .service-card,
+:root[data-theme="dark"] .feature-card,
+:root[data-theme="dark"] .resource-card,
+:root[data-theme="dark"] .contact-wrapper {
+  border-color: var(--border-color);
+}
+
+:root[data-theme="dark"] .feature-icon { background: #0f1625; }
+:root[data-theme="dark"] .back-to-top { background: var(--surface); }
+
+:root[data-theme="dark"] .navbar-collapse .nav-link { color: var(--text-dark) !important; }
+
+/* ---------- Headings ---------- */
+:root[data-theme="dark"] .section-header h2,
+:root[data-theme="dark"] .about-text h3,
+:root[data-theme="dark"] .service-card h4,
+:root[data-theme="dark"] .feature-title,
+:root[data-theme="dark"] .resource-card h4,
+:root[data-theme="dark"] .team-name,
+:root[data-theme="dark"] .contact-title,
+:root[data-theme="dark"] .contact-item h5,
+:root[data-theme="dark"] .testimonial-author,
+:root[data-theme="dark"] .form-label,
+:root[data-theme="dark"] .accordion-button.collapsed {
+  color: var(--heading);
+}
+
+/* ---------- Form ---------- */
+:root[data-theme="dark"] .form-control {
+  background: #0f1625;
+  color: var(--text-dark);
+  border-color: rgba(148, 163, 184, 0.2);
+}
+
+:root[data-theme="dark"] .form-control:focus {
+  background: #0f1625;
+  color: var(--text-dark);
+}
+
+:root[data-theme="dark"] .form-control::placeholder { color: #64748b; }
+
+/* ---------- Theme toggle button ---------- */
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background: transparent;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: transform 0.5s var(--ease-out), background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.theme-toggle:hover {
+  transform: rotate(20deg);
+  color: var(--accent-teal);
+  border-color: var(--accent-teal);
+  background: rgba(13, 148, 136, 0.1);
+}
+
+.theme-toggle i {
+  font-size: 1rem;
+}
+
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.6s;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
